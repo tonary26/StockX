@@ -1,0 +1,79 @@
+.basket-card {
+    width: 800px;
+    height: 120px;
+    background: #1f1f1f;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    gap: 30px;
+    margin-left: 450px;
+    margin-top: 70px;
+}
+
+.basket-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 400px;
+}
+
+.basket-left img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.basket-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.basket-center {
+    width: 150px;
+    text-align: center;
+}
+
+.basket-price {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.basket-right {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.amount-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.amount-box button {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: #333;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.delete {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: #a60000;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+}
