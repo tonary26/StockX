@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Category;
-use App\Models\Size;
 
 class Product extends Model
 {
-    protected $fillable = ['title', 'price', 'amount', 'category_id', 'size_id'];
+    use HasFactory;
+    protected $fillable = ['title', 'price', 'amount', 'category_id'];
 
     public function category()
     {
@@ -17,6 +17,6 @@ class Product extends Model
 
     public function sizes()
     {
-        return $this->belongsTo(Size::class);
+        return $this->belongsToMany(Size::class);
     }
 }

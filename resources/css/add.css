@@ -75,4 +75,7 @@ input::placeholder {
     border: 1px solid #e9e8e8;
 }
 
-
+.error {
+    display: block;
+    color: red;
+}

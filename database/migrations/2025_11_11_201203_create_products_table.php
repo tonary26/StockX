@@ -23,11 +23,6 @@ return new class extends Migration
             $table->foreignId('category_id')
                              ->constrained('categories')
                              ->cascadeOnDelete();
-
-            $table->foreignId('size_id')
-                             ->nullable()
-                             ->constrained('sizes')
-                             ->cascadeOnDelete();
         });
     }
 

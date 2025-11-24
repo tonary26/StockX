@@ -1,3 +1,5 @@
+body { background-color: #f4f4f4; }
+
 .main-login {
     display: flex;
     flex-direction: column;
@@ -50,8 +52,18 @@
     border-radius: 5px;
 }
 
-input::placeholder {
-    margin-left: 30px;
+.check-box-container {
+    margin-top: 10px;
+}
+
+.checkbox-label {
+    margin-right: 20px;
+}
+
+.forgot-pass {
+    font-size: 15px;
+    color: black;
+    text-decoration: black underline;
 }
 
 .button {
@@ -108,7 +120,7 @@ input::placeholder {
 }
 
 .register-reference-container {
-    margin-top: 20px;
+    margin-top: 40px;
     width: 330px;
     margin-left: auto;
     margin-right: auto;
@@ -121,4 +133,9 @@ input::placeholder {
     line-height: 1.4;
     white-space: normal;
     word-wrap: break-word;
+}
+
+.error {
+    display: block;
+    color: red;
 }

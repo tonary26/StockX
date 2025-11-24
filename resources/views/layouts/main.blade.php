@@ -16,26 +16,37 @@
             <a href="{{ route('product.index') }}">StockX</a>
         </div>
         <div class="nav-menu">
-            <div class="basket-container">
-                <a href="basket.html">
-                    <img class="basket" src="https://images.icon-icons.com/2785/PNG/512/shopping_cart_icon_177373.png" alt="Корзина">
-                </a>
-            </div>
-            <div class="add-shouse">
-                <a href="{{ route('product.add') }}">Add</a>
-            </div>
-            <div class="add-category">
-                <a href="add_category.html">Add Category</a>
-            </div>
-            <div class="add-subcategory">
-                <a href="add_subcategory.html">Add Subcategory</a>
-            </div>
-            <div class="login">
-                <a href="login.html">Login</a>
-            </div>
-            <div class="sign-up">
-                <a href="register.html">Sign Up</a>
-            </div>
+            @guest
+                <div class="login">
+                    <a href="{{ route('auth.login.show') }}">Login</a>
+                </div>
+                <div class="sign-up">
+                    <a href="{{ route('auth.register.show') }}">Sign Up</a>
+                </div>
+            @endguest
+
+            @auth
+                <div class="add-shouse">
+                    <a href="{{ route('product.add') }}">Add</a>
+                </div>
+                <div class="add-category">
+                    <a href="add_category.html">Add Category</a>
+                </div>
+                <div class="add-subcategory">
+                    <a href="add_subcategory.html">Add Subcategory</a>
+                </div>
+                <div class="basket-container">
+                    <a href="basket.html">
+                        <img class="basket" src="https://images.icon-icons.com/2785/PNG/512/shopping_cart_icon_177373.png" alt="Корзина">
+                    </a>
+                </div>
+                <div class="log-out">
+                    <form action="{{ route('auth.logout') }}" method="post">
+                        @csrf
+                        <input class="log-out" type="submit" value="Log Out">
+                    </form>
+                </div>
+            @endauth
         </div>
     </div>
 </div>

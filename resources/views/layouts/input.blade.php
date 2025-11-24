@@ -12,7 +12,7 @@
 <div class="main-login">
     <div class="main-login-container">
         <div class="logo-container">
-            <a href="index.html">
+            <a href="{{ route('index') }}">
                 <h2>StockX</h2>
             </a>
         </div>

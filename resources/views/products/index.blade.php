@@ -11,15 +11,30 @@
 @section('content')
     <div class="cards-container">
         <div class="cards">
-            <a href="cart.html">
-                <div class="card">
-                    @foreach($products as $product)
-                        <img class="img" src="https://myreact.ru/storage/catalog/products/311/thumbnail/mGQHPY.jpg" alt="кроссовки">
-                        <span class="title">{{ $product->title }}</span>
-                        <span class="price">${{ $product->price }}</span>
-                    @endforeach
+            @foreach($products as $product)
+                <div class="card-container">
+                    <a href="{{ route('product.get', $product->id) }}">
+                        <div class="card">
+                            <img class="img"
+                                 src="https://myreact.ru/storage/catalog/products/311/thumbnail/mGQHPY.jpg"
+                                 alt="кроссовки">
+                            <span class="title">{{ $product->title }}</span>
+                            <span class="price">${{ $product->price }}</span>
+                            <form action="{{ route('product.delete', $product->id) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button class="del-btn" type="submit" >
+                                    <img src="https://cdn-icons-png.flaticon.com/128/542/542673.png"
+                                         alt="удалить">
+                                </button>
+                            </form>
+                        </div>
+                    </a>
+                    <div class="upd-btn">
+                        <a href="{{ route('product.edit', $product->id) }}">Обновить</a>
+                    </div>
                 </div>
-            </a>
+            @endforeach
         </div>
     </div>
 @endsection
