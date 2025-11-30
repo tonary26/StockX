@@ -16,6 +16,12 @@ use App\Http\Controllers\Auth\Login\CreateController as LoginShowController;
 use App\Http\Controllers\Auth\Register\CreateController as RegisterShowController;
 use App\Http\Controllers\Auth\Register\StoreController as RegisterStoreController;
 
+use App\Http\Controllers\Auth\Password\ShowForgotController as ShowForgotPasswordFormController;
+use App\Http\Controllers\Auth\Password\SendResetLinkController as SendResetPasswordLinkController;
+
+use App\Http\Controllers\Auth\Password\ShowResetFormController as ShowResetPasswordFormController;
+use App\Http\Controllers\Auth\Password\ResetController as PasswordResetController;
+
 use App\Http\Controllers\Auth\Logout\DestroyController;
 
 
@@ -46,5 +52,16 @@ Route::prefix('auth')->name('auth.')->group(function() {
         Route::post('/', LoginStoreController::class)->name('store');
     });
 
+    Route::prefix('password')->name('password.')->group(function () {
+        Route::get('forgot', ShowForgotPasswordFormController::class)->name('request');
+        Route::post('forgot', SendResetPasswordLinkController::class)->name('email');
+    });
+
     Route::post('logout', DestroyController::class)->name('logout');
+});
+
+
+Route::prefix('password')->name('password.')->group(function () {
+    Route::get('reset/{token}/', ShowResetPasswordFormController::class)->name('reset');
+    Route::post('reset', PasswordResetController::class)->name('update');
 });
