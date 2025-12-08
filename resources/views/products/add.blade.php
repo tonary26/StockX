@@ -54,9 +54,14 @@
             <div class="input-container">
                 <select class="categories" name="category_id">
                     @foreach($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->title }}</option>
+                        @foreach($category->children as $subCategory)
+                            <option value="{{ $subCategory->id }}">
+                                {{ $subCategory->title }}
+                            </option>
+                        @endforeach
                     @endforeach
                 </select>
+
             </div>
         </div>
         <button class="button" type="submit">Add</button>

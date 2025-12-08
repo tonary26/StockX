@@ -58,10 +58,12 @@
             <div class="input-container">
                 <select class="categories" name="category_id">
                     @foreach($categories as $category)
-                        <option value="{{ $category->id }}"
-                                {{ $product->category->id == $category->id ? 'selected' : '' }}>
-                            {{ $category->title }}
-                        </option>
+                        @foreach($category->children as $subCategory)
+                            <option value="{{ $subCategory->id }}"
+                                    {{ $product->category->id == $subCategory->id ? 'selected' : '' }}>
+                                {{ $subCategory->title }}
+                            </option>
+                        @endforeach
                     @endforeach
                 </select>
             </div>

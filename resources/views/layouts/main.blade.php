@@ -36,7 +36,7 @@
                     <a href="add_subcategory.html">Add Subcategory</a>
                 </div>
                 <div class="basket-container">
-                    <a href="basket.html">
+                    <a href="{{ route('basket.index') }}">
                         <img class="basket" src="https://images.icon-icons.com/2785/PNG/512/shopping_cart_icon_177373.png" alt="Корзина">
                     </a>
                 </div>
@@ -55,12 +55,15 @@
         <div class="nav-categories">
             <a href="{{ route('product.index') }}">Все</a>
             @foreach($categories as $category)
-                <div class="category-item dropdown">
-                    <a href="#">{{ $category->title }}</a>
+                <div class="category-item">
+                    <a href="#" class="category-link">{{ $category->title }}</a>
                     @if($category->children->count() > 0)
                         <div class="dropdown-menu">
                             @foreach($category->children as $subCategory)
-                                <a href="#">{{ $subCategory->title }}</a>
+                                <a href="{{ route('product.index', ['category_id' => $subCategory->id]) }}"
+                                   class="subcategory-link">
+                                    {{ $subCategory->title }}
+                                </a>
                             @endforeach
                         </div>
                     @endif

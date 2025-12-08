@@ -1,79 +1,131 @@
 .basket-card {
     width: 800px;
-    height: 120px;
-    background: #1f1f1f;
-    border-radius: 12px;
-    color: white;
+    min-height: 120px;
+    background: #1e1e1e;
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin: 25px auto;
     display: flex;
     align-items: center;
-    padding: 15px 20px;
-    margin-bottom: 15px;
-    gap: 30px;
-    margin-left: 450px;
-    margin-top: 70px;
+    justify-content: space-between;
+    gap: 20px;
+    border: 1px solid #2b2b2b;
+    transition: 0.2s;
+}
+
+.basket-card:hover {
+    background: #262626;
+    border-color: #3a3a3a;
 }
 
 .basket-left {
     display: flex;
     align-items: center;
-    gap: 20px;
-    width: 400px;
+    gap: 16px;
+    width: 50%;
 }
 
 .basket-left img {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
+    width: 95px;
+    height: 95px;
+    border-radius: 12px;
     object-fit: cover;
 }
 
 .basket-title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
+    color: white;
 }
 
 .basket-center {
-    width: 150px;
+    width: 100px;
     text-align: center;
 }
 
 .basket-price {
-    font-size: 22px;
+    color: white;
+    font-size: 20px;
     font-weight: 700;
 }
 
 .basket-right {
-    width: 150px;
+    width: 200px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    align-items: flex-end;
+    gap: 12px;
 }
 
 .amount-box {
     display: flex;
     align-items: center;
     gap: 10px;
+    background: #2a2a2a;
+    padding: 6px 10px;
+    border-radius: 10px;
 }
 
 .amount-box button {
     width: 28px;
     height: 28px;
     border: none;
-    background: #333;
-    color: #fff;
+    background: #3a3a3a;
+    color: white;
     border-radius: 6px;
     font-size: 20px;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.amount-box button:hover {
+    background: #505050;
+}
+
+.amount {
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    width: 26px;
+    text-align: center;
+}
+
+.basket-image-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.basket-image-box img {
+    width: 95px;
+    height: 95px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.basket-size-text {
+    font-size: 12px;
+    color: #bbb;
+    margin-top: 6px;
+    opacity: 0.8;
 }
 
 .delete {
     width: 30px;
     height: 30px;
     border: none;
-    background: #a60000;
-    color: #fff;
+    background: #b30000;
+    color: white;
     border-radius: 6px;
     cursor: pointer;
     font-size: 18px;
+    transition: 0.2s;
 }
+
+.delete:hover {
+    background: #ff0000;
+}
+
+

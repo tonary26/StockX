@@ -24,6 +24,10 @@ use App\Http\Controllers\Auth\Password\ResetController as PasswordResetControlle
 
 use App\Http\Controllers\Auth\Logout\DestroyController;
 
+use App\Http\Controllers\Basket\IndexController as BasketIndexController;
+use App\Http\Controllers\Basket\StoreController as BasketStoreController;
+use App\Http\Controllers\Basket\DeleteController as BasketDeleteController;
+
 
 Route::get('/', ProductIndexController::class)->name('index');
 
@@ -64,4 +68,10 @@ Route::prefix('auth')->name('auth.')->group(function() {
 Route::prefix('password')->name('password.')->group(function () {
     Route::get('reset/{token}/', ShowResetPasswordFormController::class)->name('reset');
     Route::post('reset', PasswordResetController::class)->name('update');
+});
+
+Route::prefix('basket')->name('basket.')->group(function () {
+    Route::get('index', BasketIndexController::class)->name('index');
+    Route::post('/store/{product_id}/', BasketStoreController::class)->name('store');
+    Route::delete('/delete/{basket}/', BasketDeleteController::class)->name('delete');
 });
