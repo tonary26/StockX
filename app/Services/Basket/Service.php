@@ -32,6 +32,20 @@ class Service
         return $basket;
     }
 
+    public function increase($basket) {
+        $basket->increment('quantity');
+    }
+
+    public function decrease($basket)
+    {
+        if ($basket->quantity <= 1) {
+            $basket->delete();
+            return;
+        }
+
+        $basket->decrement('quantity');
+    }
+
     public function delete($basket)
     {
         $basket->delete();

@@ -25,9 +25,19 @@
             </div>
             <div class="basket-right">
                 <div class="amount-box">
-                    <button class="minus">−</button>
+                    <form action="{{ route('basket.decrease', $basket->id) }}" method="post">
+                        @csrf
+                        <button type="submit" class="minus">−</button>
+                    </form>
                     <span class="amount">{{ $basket->quantity }}</span>
-                    <button class="plus">+</button>
+                    <form action="{{ route('basket.increase', $basket->id) }}" method="post">
+                        @csrf
+                        <button type="submit"
+                                class="plus"
+                                @disabled($basket->quantity >= $basket->product->amount)>
+                            +
+                        </button>
+                    </form>
                 </div>
                 <form action="{{ route('basket.delete', $basket->id) }}" method="post">
                     @csrf
@@ -36,5 +46,10 @@
                 </form>
             </div>
         </div>
+        @if($errors->has('amount'))
+            <span class="error">
+                {{ $errors->first('amount') }}
+            </span>
+        @endif
     @endforeach
 @endsection

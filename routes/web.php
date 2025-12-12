@@ -27,6 +27,8 @@ use App\Http\Controllers\Auth\Logout\DestroyController;
 use App\Http\Controllers\Basket\IndexController as BasketIndexController;
 use App\Http\Controllers\Basket\StoreController as BasketStoreController;
 use App\Http\Controllers\Basket\DeleteController as BasketDeleteController;
+use App\Http\Controllers\Basket\increaseController as BasketIncreaseController;
+use App\Http\Controllers\Basket\DecreaseController as BasketDecreaseController;
 
 
 Route::get('/', ProductIndexController::class)->name('index');
@@ -70,8 +72,11 @@ Route::prefix('password')->name('password.')->group(function () {
     Route::post('reset', PasswordResetController::class)->name('update');
 });
 
+
 Route::prefix('basket')->name('basket.')->group(function () {
     Route::get('index', BasketIndexController::class)->name('index');
     Route::post('/store/{product_id}/', BasketStoreController::class)->name('store');
     Route::delete('/delete/{basket}/', BasketDeleteController::class)->name('delete');
+    Route::post('{basket}/increase', BasketIncreaseController::class)->name('increase');
+    Route::post('{basket}/decrease', BasketDecreaseController::class)->name('decrease');
 });

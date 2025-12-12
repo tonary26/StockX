@@ -128,4 +128,12 @@
     background: #ff0000;
 }
 
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    margin-top: 6px;
+    font-size: 20px;
+}
 
