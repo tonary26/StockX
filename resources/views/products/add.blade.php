@@ -6,7 +6,7 @@
 
 
 @section('title')
-    <title>Добавить кроссовки</title>
+    <title>Add shouse</title>
 @endsection
 
 

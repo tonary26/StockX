@@ -9,6 +9,6 @@ class IndexController extends BaseController
     public function __invoke(BasketFilter $filter)
     {
         $baskets = Basket::filter($filter)->get();
-        return view('basket.index', compact('baskets'));
+        return view('baskets.index', compact('baskets'));
     }
 }

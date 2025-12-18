@@ -10,6 +10,12 @@ use App\Http\Controllers\Product\IndexController as ProductIndexController;
 use App\Http\Controllers\Product\StoreController as ProductStoreController;
 use App\Http\Controllers\Product\UpdateController as ProductUpdateController;
 
+use App\Http\Controllers\Category\AddController as CategoryAddController;
+use App\Http\Controllers\Category\StoreController as CategoryStoreController;
+
+use App\Http\Controllers\Subcategory\AddController as SubcategoryAddController;
+use App\Http\Controllers\Subcategory\StoreController as SubcategoryStoreController;
+
 use App\Http\Controllers\Auth\Login\StoreController as LoginStoreController;
 use App\Http\Controllers\Auth\Login\CreateController as LoginShowController;
 
@@ -47,6 +53,18 @@ Route::prefix('products')->name('product.')->group(function () {
 });
 
 
+Route::prefix('category')->name('category.')->group(function () {
+    Route::get('add', CategoryAddController::class)->name('add');
+    Route::post('store', CategoryStoreController::class)->name('store');
+});
+
+
+Route::prefix('subcategory')->name('subcategory.')->group(function () {
+    Route::get('add', SubcategoryAddController::class)->name('add');
+    Route::post('store', SubcategoryStoreController::class)->name('store');
+});
+
+
 Route::prefix('auth')->name('auth.')->group(function() {
     Route::prefix('register')->name('register.')->group(function () {
         Route::get('/', RegisterShowController::class)->name('show');
@@ -73,10 +91,10 @@ Route::prefix('password')->name('password.')->group(function () {
 });
 
 
-Route::prefix('basket')->name('basket.')->group(function () {
+Route::prefix('baskets')->name('baskets.')->group(function () {
     Route::get('index', BasketIndexController::class)->name('index');
     Route::post('/store/{product_id}/', BasketStoreController::class)->name('store');
-    Route::delete('/delete/{basket}/', BasketDeleteController::class)->name('delete');
-    Route::post('{basket}/increase', BasketIncreaseController::class)->name('increase');
-    Route::post('{basket}/decrease', BasketDecreaseController::class)->name('decrease');
+    Route::delete('/delete/{baskets}/', BasketDeleteController::class)->name('delete');
+    Route::post('{baskets}/increase', BasketIncreaseController::class)->name('increase');
+    Route::post('{baskets}/decrease', BasketDecreaseController::class)->name('decrease');
 });

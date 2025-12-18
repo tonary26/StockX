@@ -6,7 +6,7 @@
 
 
 @section('title')
-    <title>Регистрация</title>
+    <title>Register</title>
 @endsection
 
 

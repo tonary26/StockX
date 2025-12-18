@@ -1,12 +1,12 @@
 @extends('layouts.main')
 
 @section('styles')
-    @vite(['resources/css/basket.css', 'resources/css/index.css', 'resources/css/base.css'])
+    @vite(['resources/css/baskets.css', 'resources/css/index.css', 'resources/css/base.css'])
 @endsection
 
 
 @section('title')
-    <title>Корзина</title>
+    <title>Basket</title>
 @endsection
 
 
@@ -16,7 +16,7 @@
             <div class="basket-left">
                 <a href="{{ route('product.get', $basket->product->id) }}">
                     <img src="https://myreact.ru/storage/catalog/products/311/thumbnail/mGQHPY.jpg" alt="product">
-                    <div class="basket-size-text">Размер: {{ $basket->size }} US</div>
+                    <div class="basket-size-text">Size: {{ $basket->size }} US</div>
                 </a>
                 <div class="basket-title">{{ $basket->product->title }}</div>
             </div>
@@ -25,12 +25,12 @@
             </div>
             <div class="basket-right">
                 <div class="amount-box">
-                    <form action="{{ route('basket.decrease', $basket->id) }}" method="post">
+                    <form action="{{ route('baskets.decrease', $basket->id) }}" method="post">
                         @csrf
                         <button type="submit" class="minus">−</button>
                     </form>
                     <span class="amount">{{ $basket->quantity }}</span>
-                    <form action="{{ route('basket.increase', $basket->id) }}" method="post">
+                    <form action="{{ route('baskets.increase', $basket->id) }}" method="post">
                         @csrf
                         <button type="submit"
                                 class="plus"
@@ -39,7 +39,7 @@
                         </button>
                     </form>
                 </div>
-                <form action="{{ route('basket.delete', $basket->id) }}" method="post">
+                <form action="{{ route('baskets.delete', $basket->id) }}" method="post">
                     @csrf
                     @method('delete')
                     <input type="submit" class="delete" value="×">

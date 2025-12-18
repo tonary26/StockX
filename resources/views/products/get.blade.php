@@ -27,7 +27,7 @@
                         @endforeach
                     </ul>
                 @else
-                    <span>Размеры закончились.</span>
+                    <span>Sizes ran out.</span>
                 @endif
             </div>
 
@@ -35,7 +35,7 @@
                 <span class="price">${{ $product->price }}</span>
             </div>
 
-            <form action="{{ route('basket.store', $product->id) }}" method="post">
+            <form action="{{ route('baskets.store', $product->id) }}" method="post">
                 @csrf
                 <input type="hidden" name="size" id="selected-size">
 

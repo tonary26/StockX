@@ -13,6 +13,6 @@ class StoreController extends BaseController
 
         $this->service->add($product_id, $size);
 
-        return redirect()->route('basket.index');
+        return redirect()->route('baskets.index');
     }
 }

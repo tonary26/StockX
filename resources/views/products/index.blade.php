@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-    <title>Главная страница</title>
+    <title>Home</title>
 @endsection
 
 @section('styles')
@@ -31,7 +31,7 @@
                         </div>
                     </a>
                     <div class="upd-btn">
-                        <a href="{{ route('product.edit', $product->id) }}">Обновить</a>
+                        <a href="{{ route('product.edit', $product->id) }}">Update</a>
                     </div>
                 </div>
             @endforeach

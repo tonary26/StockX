@@ -30,13 +30,13 @@
                     <a href="{{ route('product.add') }}">Add</a>
                 </div>
                 <div class="add-category">
-                    <a href="add_category.html">Add Category</a>
+                    <a href="{{ route('category.add') }}">Add Category</a>
                 </div>
                 <div class="add-subcategory">
-                    <a href="add_subcategory.html">Add Subcategory</a>
+                    <a href="{{ route('subcategory.add') }}">Add Subcategory</a>
                 </div>
                 <div class="basket-container">
-                    <a href="{{ route('basket.index') }}">
+                    <a href="{{ route('baskets.index') }}">
                         <img class="basket" src="https://images.icon-icons.com/2785/PNG/512/shopping_cart_icon_177373.png" alt="Корзина">
                     </a>
                 </div>
@@ -53,7 +53,7 @@
 <div class="main">
     <div class="main-container">
         <div class="nav-categories">
-            <a href="{{ route('product.index') }}">Все</a>
+            <a href="{{ route('product.index') }}">All</a>
             @foreach($categories as $category)
                 <div class="category-item">
                     <a href="#" class="category-link">{{ $category->title }}</a>

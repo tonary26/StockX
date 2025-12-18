@@ -10,6 +10,6 @@ class DeleteController extends BaseController
     {
         $this->service->delete($basket);
 
-        return redirect()->route('basket.index');
+        return redirect()->route('baskets.index');
     }
 }

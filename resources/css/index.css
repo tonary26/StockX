@@ -31,7 +31,7 @@ a { text-decoration: none; }
     gap: 20px;
 }
 
-.logo {
+.logo a {
     font-size: 30px;
     font-weight: bold;
 }
