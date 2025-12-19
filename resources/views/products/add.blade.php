@@ -11,9 +11,17 @@
 
 
 @section('form')
-    <form class="form" action="{{ route('product.store') }}" method="post">
+    <form class="form" action="{{ route('product.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="input-section">
+            <div class="input-file-container">
+                <input class="input-file"
+                       type="file"
+                       name="image">
+                @error('image')
+                    <span class="error">{{ $message }}</span>
+                @enderror
+            </div>
             <div class="input-container">
                 <input class="input"
                        type="text"

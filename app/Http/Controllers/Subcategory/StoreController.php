@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Subcategory;
 
-use App\Http\Controllers\Controller;
 use App\Http\Requests\Subcategory\Store;
 
 class StoreController extends BaseController

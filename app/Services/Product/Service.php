@@ -6,9 +6,22 @@ use App\Models\Product;
 
 class Service
 {
-    public function store(array $data)
+    public function store($request)
     {
-        $product = Product::create($data);
+        $data = $request->validated();
+
+        $data['image'] = $request->file('image')->store(
+            'products',
+            'public'
+        );
+
+        $product = Product::create([
+            'title' => $data['title'],
+            'price' => $data['price'],
+            'amount' => $data['amount'],
+            'image' => $data['image'],
+            'category_id' => $data['category_id']
+        ]);
 
         if (!empty($data['size_id'])) {
             $product->sizes()->attach($data['size_id']);

@@ -25,6 +25,7 @@ class Store extends FormRequest
             'title' => ['required', 'string'],
             'price' => ['required', 'integer'],
             'amount' => ['required', 'integer'],
+            'image' => ['required', 'image', 'mimes:jpg,jpeg,png,webp'],
             'category_id' => ['integer'],
             'size_id' => ['array']
         ];

@@ -16,7 +16,7 @@
                     <a href="{{ route('product.get', $product->id) }}">
                         <div class="card">
                             <img class="img"
-                                 src="https://myreact.ru/storage/catalog/products/311/thumbnail/mGQHPY.jpg"
+                                 src="{{ asset('storage/' . $product->image) }}"
                                  alt="кроссовки">
                             <span class="title">{{ $product->title }}</span>
                             <span class="price">${{ $product->price }}</span>

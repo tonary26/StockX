@@ -19,6 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('price');
             $table->unsignedBigInteger('amount')
                                       ->nullable();
+            $table->string('image');
 
             $table->foreignId('category_id')
                              ->constrained('categories')

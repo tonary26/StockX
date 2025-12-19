@@ -10,7 +10,7 @@ use App\Filters\QueryFilter;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'price', 'amount', 'category_id'];
+    protected $fillable = ['title', 'price', 'amount', 'image', 'category_id'];
 
     public function category()
     {

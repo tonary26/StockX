@@ -4,7 +4,6 @@ namespace App\Services\Auth\Login;
 
 use Illuminate\Support\Facades\Auth;
 
-
 class Service
 {
     public function store($data)
@@ -12,6 +11,6 @@ class Service
         return Auth::attempt([
             'email' => $data['email'],
             'password' => $data['password']
-        ], $data['remember']);
+        ], $data['remember'] ?? false);
     }
 }

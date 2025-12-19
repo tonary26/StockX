@@ -25,7 +25,7 @@ body { background-color: #f4f4f4; }
     text-align: center;
     width: 400px;
     border: 2px solid #e9e8e8;
-    height: 450px;
+    height: 500px;
     background-color: white;
 }
 
@@ -38,6 +38,11 @@ body { background-color: #f4f4f4; }
 
 .input-section {
     margin-top: 80px;
+}
+
+.error {
+    color: #dc3545;
+    font-size: 13px;
 }
 
 .input-container {

@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('styles')
-    @vite(['resources/css/baskets.css', 'resources/css/index.css', 'resources/css/base.css'])
+    @vite(['resources/css/basket.css', 'resources/css/index.css', 'resources/css/base.css'])
 @endsection
 
 
