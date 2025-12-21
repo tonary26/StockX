@@ -27,7 +27,7 @@
 - PHP >= 8.3
 - Composer
 - Node.js & npm
-- MySQL / MariaDB
+- MySQL 
 
 ---
 
