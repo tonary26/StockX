@@ -15,7 +15,7 @@
         <div class="basket-card">
             <div class="basket-left">
                 <a href="{{ route('product.get', $basket->product->id) }}">
-                    <img src="https://myreact.ru/storage/catalog/products/311/thumbnail/mGQHPY.jpg" alt="product">
+                    <img src="{{ asset('storage/' . $basket->product->image) }}" alt="shouse">
                     <div class="basket-size-text">Size: {{ $basket->size }} US</div>
                 </a>
                 <div class="basket-title">{{ $basket->product->title }}</div>

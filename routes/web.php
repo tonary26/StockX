@@ -13,9 +13,6 @@ use App\Http\Controllers\Product\UpdateController as ProductUpdateController;
 use App\Http\Controllers\Category\AddController as CategoryAddController;
 use App\Http\Controllers\Category\StoreController as CategoryStoreController;
 
-use App\Http\Controllers\Subcategory\AddController as SubcategoryAddController;
-use App\Http\Controllers\Subcategory\StoreController as SubcategoryStoreController;
-
 use App\Http\Controllers\Auth\Login\StoreController as LoginStoreController;
 use App\Http\Controllers\Auth\Login\CreateController as LoginShowController;
 
@@ -57,13 +54,6 @@ Route::prefix('category')->name('category.')->group(function () {
     Route::get('add', CategoryAddController::class)->name('add');
     Route::post('store', CategoryStoreController::class)->name('store');
 });
-
-
-Route::prefix('subcategory')->name('subcategory.')->group(function () {
-    Route::get('add', SubcategoryAddController::class)->name('add');
-    Route::post('store', SubcategoryStoreController::class)->name('store');
-});
-
 
 Route::prefix('auth')->name('auth.')->group(function() {
     Route::prefix('register')->name('register.')->group(function () {

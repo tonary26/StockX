@@ -17,7 +17,7 @@
                         <div class="card">
                             <img class="img"
                                  src="{{ asset('storage/' . $product->image) }}"
-                                 alt="кроссовки">
+                                 alt="shouse">
                             <span class="title">{{ $product->title }}</span>
                             <span class="price">${{ $product->price }}</span>
                             <form action="{{ route('product.delete', $product->id) }}" method="post">
@@ -25,7 +25,7 @@
                                 @method('delete')
                                 <button class="del-btn" type="submit" >
                                     <img src="https://cdn-icons-png.flaticon.com/128/542/542673.png"
-                                         alt="удалить">
+                                         alt="delete">
                                 </button>
                             </form>
                         </div>

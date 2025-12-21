@@ -55,22 +55,6 @@
                 </div>
             </div>
             <button class="button" type="submit">Sign Up</button>
-
-            <div class="log-in-variants">
-                <span>Sign up with</span>
-            </div>
-            <div class="social-networks">
-                <a class="login-with-google" href="#">
-                    <img class="google-icon"
-                         src="https://cdn4.iconfinder.com/data/icons/new-google-logo-2015/400/new-google-favicon-512.png"
-                         alt="google-text-logo">
-                </a>
-                <a class="login-with-facebook"  href="#">
-                    <img class="facebook-icon"
-                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Facebook_Logo_2023.png/1200px-Facebook_Logo_2023.png"
-                         alt="Facebook-PNG-Isolated-HD">
-                </a>
-            </div>
             <div class="login-reference-container">
                 <span class="login-reference">Already have an account? <a href="{{ route('auth.login.show') }}">Log In</a> </span>
             </div>

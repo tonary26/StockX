@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Services\Category;
-use App\Models\Category;
 
+use App\Models\Category;
 
 class Service
 {
@@ -10,7 +10,7 @@ class Service
     {
         Category::create([
             'title' => $data['title'],
-            'parent_id' => $data['category_id']
+            'parent_id' => $data['parent_id'] ?? null
         ]);
     }
 }

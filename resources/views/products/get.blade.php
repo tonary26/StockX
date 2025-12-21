@@ -11,7 +11,7 @@
 @section('content')
     <div class="cart-info">
         <div class="image-container">
-            <img class="image" src="https://myreact.ru/storage/catalog/products/311/thumbnail/mGQHPY.jpg" alt="jordan4">
+            <img class="image" src="{{ asset('storage/' . $product->image) }}" alt="shouse">
         </div>
 
         <div class="cart-text-info">

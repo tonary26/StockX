@@ -30,10 +30,7 @@
                     <a href="{{ route('product.add') }}">Add</a>
                 </div>
                 <div class="add-category">
-                    <a href="{{ route('category.add') }}">Add Category</a>
-                </div>
-                <div class="add-subcategory">
-                    <a href="{{ route('subcategory.add') }}">Add Subcategory</a>
+                    <a href="{{ route('category.add') }}">Add category</a>
                 </div>
                 <div class="basket-container">
                     <a href="{{ route('baskets.index') }}">

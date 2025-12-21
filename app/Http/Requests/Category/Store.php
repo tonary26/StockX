@@ -23,7 +23,7 @@ class Store extends FormRequest
     {
         return [
             'title' => ['required', 'string'],
-            'category_id' => ['integer', 'required'],
+            'parent_id' => ['integer', 'nullable'],
         ];
     }
 }

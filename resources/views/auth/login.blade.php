@@ -45,21 +45,6 @@
             <div class="rule-container">
                 <span class="rule">By logging in, you agree to the Terms of Service and Privacy Policy</span>
             </div>
-            <div class="log-in-variants">
-                <span>Log In with</span>
-            </div>
-            <div class="social-networks">
-                <a class="login-with-google" href="#">
-                    <img class="google-icon"
-                         src="https://cdn4.iconfinder.com/data/icons/new-google-logo-2015/400/new-google-favicon-512.png"
-                         alt="google-text-logo">
-                </a>
-                <a class="login-with-facebook"  href="#">
-                    <img class="facebook-icon"
-                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Facebook_Logo_2023.png/1200px-Facebook_Logo_2023.png"
-                         alt="Facebook-PNG-Isolated-HD">
-                </a>
-            </div>
             <div class="register-reference-container">
                 <span class="register-reference">Need an account? <a href="{{ route('auth.register.show') }}">Sign Up</a></span>
             </div>
