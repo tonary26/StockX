@@ -34,7 +34,7 @@
 ## 🚀 Installation
 
 ```bash
-git clone https://github.com/username/sneakers-shop.git
+git clone https://github.com/tonary26/StockX.git
 cd sneakers-shop
 
 composer install
