@@ -35,7 +35,7 @@
 
 ```bash
 git clone https://github.com/tonary26/StockX.git
-cd sneakers-shop
+cd StockX
 
 composer install
 npm install
