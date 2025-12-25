@@ -37,4 +37,8 @@
             @endforeach
         </div>
     </div>
+
+    <div class="pagination">
+        {{ $products->links() }}
+    </div>
 @endsection

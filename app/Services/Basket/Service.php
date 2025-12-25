@@ -14,18 +14,19 @@ class Service
 
         $basket = Basket::where([
             'session_id' => session()->getId(),
-            'product_id' => $product->id
+            'product_id' => $product->id,
+            'size' => $size
         ])->first();
 
         if ($basket) {
-            $basket->quantity++;
-            $basket->save();
+            $basket->increment('quantity');
         } else {
             Basket::create([
                 'session_id' => session()->getId(),
                 'product_id' => $product->id,
                 'price' => $product->price,
-                'size' => $size
+                'size' => $size,
+                'quantity' => 1
             ]);
         }
 

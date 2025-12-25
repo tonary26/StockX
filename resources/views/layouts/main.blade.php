@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @yield('styles')
-    @vite(['resources/css/index.css'])
+    @vite(['resources/css/index.css', 'resources/css/app.css', 'resources/js/app.js'])
     @yield('title')
 </head>
 <body>

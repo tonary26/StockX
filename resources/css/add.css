@@ -5,6 +5,7 @@ body { background-color: #f4f4f4; }
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .main-login-container {
@@ -85,4 +86,10 @@ input::placeholder {
 .error {
     display: block;
     color: red;
+}
+
+.input-file-container {
+    position: absolute;
+    top: 40px;
+    left: 40px;
 }

@@ -16,7 +16,7 @@ class ProductSeeder extends Seeder
     {
         $sizes = Size::all();
 
-        Product::factory(150)->create()->each(function ($product) use ($sizes) {
+        Product::factory(1000)->create()->each(function ($product) use ($sizes) {
             $product->sizes()->attach(
                 $sizes->random(rand(1, $sizes->count()))->pluck('id')
             );

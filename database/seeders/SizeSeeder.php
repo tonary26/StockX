@@ -18,12 +18,12 @@ class   SizeSeeder extends Seeder
             "10", "10.5", "11", "11.5", "12", "12.5", "13", "13.5", "14", "14.5", "15", "16", "17", "18", "19", "20"
         ];
 
-        $sizeSata = array_map(function ($size) {
+        $sizeData = array_map(function ($size) {
             return [
                 'title' => $size
             ];
         }, $sizes);
 
-        Size::insert($sizeSata);
+        Size::insert($sizeData);
     }
 }

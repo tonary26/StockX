@@ -21,8 +21,7 @@ return new class extends Migration
                   ->constrained('products')
                   ->cascadeOnDelete();
 
-            $table->unsignedBigInteger('quantity')
-                  ->default(1);
+            $table->unsignedBigInteger('quantity');
             $table->integer('size');
             $table->integer('price');
         });

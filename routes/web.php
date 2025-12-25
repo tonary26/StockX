@@ -84,7 +84,7 @@ Route::prefix('password')->name('password.')->group(function () {
 Route::prefix('baskets')->name('baskets.')->group(function () {
     Route::get('index', BasketIndexController::class)->name('index');
     Route::post('/store/{product_id}/', BasketStoreController::class)->name('store');
-    Route::delete('/delete/{baskets}/', BasketDeleteController::class)->name('delete');
-    Route::post('{baskets}/increase', BasketIncreaseController::class)->name('increase');
-    Route::post('{baskets}/decrease', BasketDecreaseController::class)->name('decrease');
+    Route::delete('/delete/{basket}/', BasketDeleteController::class)->name('delete');
+    Route::post('{basket}/increase', BasketIncreaseController::class)->name('increase');
+    Route::post('{basket}/decrease', BasketDecreaseController::class)->name('decrease');
 });

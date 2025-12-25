@@ -22,10 +22,10 @@ class Store extends FormRequest
     public function rules(): array
     {
         return [
+            'image' => ['required', 'image', 'mimes:jpg,jpeg,png,webp'],
             'title' => ['required', 'string'],
             'price' => ['required', 'integer'],
             'amount' => ['required', 'integer'],
-            'image' => ['required', 'image', 'mimes:jpg,jpeg,png,webp'],
             'category_id' => ['integer'],
             'size_id' => ['array']
         ];

@@ -27,7 +27,7 @@
                         @endforeach
                     </ul>
                 @else
-                    <span>Sizes ran out.</span>
+                    <span class="size-none">Sizes ran out.</span>
                 @endif
             </div>
 

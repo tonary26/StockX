@@ -13,6 +13,7 @@
 
 .title-container,
 .price-container,
+.size-none,
 .button {
     margin-left: 40px;
 }
@@ -60,4 +61,8 @@
     font-weight: bold;
     border-radius: 30px;
     cursor: pointer;
+}
+
+.size-none {
+    color: #8d3838;
 }

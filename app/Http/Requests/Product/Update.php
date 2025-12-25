@@ -22,6 +22,7 @@ class Update extends FormRequest
     public function rules(): array
     {
         return [
+            'image' => ['required', 'image', 'mimes:jpg,jpeg,png,webp'],
             'title' => ['required', 'string'],
             'price' => ['required', 'integer'],
             'amount' => ['required', 'integer'],

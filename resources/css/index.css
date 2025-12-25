@@ -226,3 +226,10 @@ a { text-decoration: none; }
 .upd-btn a {
     color: white;
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}

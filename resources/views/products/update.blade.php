@@ -11,9 +11,17 @@
 
 
 @section('form')
-    <form class="form" action="{{ route('product.update', $product->id) }}" method="post">
+    <form class="form" action="{{ route('product.update', $product->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('patch')
+        <div class="input-file-container">
+            <input class="input-file"
+                   type="file"
+                   name="image">
+            @error('image')
+                <span class="error">{{ $message }}</span>
+            @enderror
+        </div>
         <div class="input-section">
             <div class="input-container">
                 <input class="input"
