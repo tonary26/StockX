@@ -20,19 +20,27 @@
                                  alt="shouse">
                             <span class="title">{{ $product->title }}</span>
                             <span class="price">${{ $product->price }}</span>
-                            <form action="{{ route('product.delete', $product->id) }}" method="post">
-                                @csrf
-                                @method('delete')
-                                <button class="del-btn" type="submit" >
-                                    <img src="https://cdn-icons-png.flaticon.com/128/542/542673.png"
-                                         alt="delete">
-                                </button>
-                            </form>
+
+                            @if(auth()->user()->role === 'admin')
+                                <form action="{{ route('product.delete', $product->id) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button class="del-btn" type="submit" >
+                                        <img src="https://cdn-icons-png.flaticon.com/128/542/542673.png"
+                                             alt="delete">
+                                    </button>
+                                </form>
+                            @endif
+
                         </div>
                     </a>
-                    <div class="upd-btn">
-                        <a href="{{ route('product.edit', $product->id) }}">Update</a>
-                    </div>
+
+                    @if(auth()->user()->role === 'admin')
+                        <div class="upd-btn">
+                            <a href="{{ route('product.edit', $product->id) }}">Update</a>
+                        </div>
+                    @endif
+
                 </div>
             @endforeach
         </div>
