@@ -10,6 +10,8 @@ class EditController extends BaseController
 {
     public function __invoke(Product $product)
     {
+        $this->authorize('update', $product);
+
         $sizes = Size::all();
         $categories = Category::whereNotNull('parent_id')->get();
 

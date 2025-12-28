@@ -21,26 +21,23 @@
                             <span class="title">{{ $product->title }}</span>
                             <span class="price">${{ $product->price }}</span>
 
-                            @if(auth()->user()->role === 'admin')
+                            @can('delete', $product)
                                 <form action="{{ route('product.delete', $product->id) }}" method="post">
                                     @csrf
                                     @method('delete')
                                     <button class="del-btn" type="submit" >
                                         <img src="https://cdn-icons-png.flaticon.com/128/542/542673.png"
-                                             alt="delete">
+                                            alt="delete">
                                     </button>
                                 </form>
-                            @endif
-
+                            @endcan
                         </div>
                     </a>
-
-                    @if(auth()->user()->role === 'admin')
+                    @can('update', $product)
                         <div class="upd-btn">
                             <a href="{{ route('product.edit', $product->id) }}">Update</a>
                         </div>
-                    @endif
-
+                    @endcan
                 </div>
             @endforeach
         </div>

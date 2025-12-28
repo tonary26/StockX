@@ -25,20 +25,22 @@
                 </div>
             @endguest
 
-            @if(auth()->user()->role === 'admin')
+            @can('create')
                 <div class="add-shouse">
                     <a href="{{ route('product.add') }}">Add</a>
                 </div>
+            @endcan
+
+            @can('create')
                 <div class="add-category">
                     <a href="{{ route('category.add') }}">Add category</a>
                 </div>
-            @endif
-
                 <div class="basket-container">
                     <a href="{{ route('baskets.index') }}">
                         <img class="basket" src="https://images.icon-icons.com/2785/PNG/512/shopping_cart_icon_177373.png" alt="Корзина">
                     </a>
                 </div>
+            @endcan
 
             @auth
                 <div class="log-out">
@@ -48,7 +50,6 @@
                     </form>
                 </div>
             @endauth
-
         </div>
     </div>
 </div>
