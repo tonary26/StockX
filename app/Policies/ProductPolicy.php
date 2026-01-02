@@ -10,7 +10,11 @@ class ProductPolicy
 {
     public function before(User $user)
     {
-        return $user->role === 'admin';
+        if ($user->role === 'admin') {
+            return true;
+        }
+
+        return null;
     }
 
     public function viewAny(User $user): bool
@@ -21,5 +25,20 @@ class ProductPolicy
     public function view(User $user, Product $product): bool
     {
         return true;
+    }
+
+    public function create(User $user): bool
+    {
+        return false;
+    }
+
+    public function update(User $user, Product $product): bool
+    {
+        return false;
+    }
+
+    public function delete(User $user, Product $product): bool
+    {
+        return false;
     }
 }

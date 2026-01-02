@@ -4,9 +4,11 @@
     <title>Home</title>
 @endsection
 
+
 @section('styles')
     @vite(['resources/css/base.css'])
 @endsection
+
 
 @section('content')
     <div class="cards-container">

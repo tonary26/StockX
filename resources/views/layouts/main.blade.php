@@ -25,13 +25,13 @@
                 </div>
             @endguest
 
-            @can('create')
+            @can('create', \App\Models\Product::class)
                 <div class="add-shouse">
-                    <a href="{{ route('product.add') }}">Add</a>
+                    <a href="{{ route('product.add') }}">Add product</a>
                 </div>
             @endcan
 
-            @can('create')
+            @can('create', \App\Models\Category::class)
                 <div class="add-category">
                     <a href="{{ route('category.add') }}">Add category</a>
                 </div>

@@ -40,8 +40,6 @@ Route::get('/', ProductIndexController::class)->name('index');
 Route::prefix('products')->name('product.')->group(function () {
     Route::get('/', ProductIndexController::class)->name('index');
 
-    Route::get('/{product}', ProductGetController::class)->name('get');
-
     Route::middleware(['auth', 'role'])->group(function () {
         Route::get('/add', ProductAddController::class)->name('add');
         Route::post('/', ProductStoreController::class)->name('store');
@@ -50,6 +48,8 @@ Route::prefix('products')->name('product.')->group(function () {
         Route::patch('/{product}', ProductUpdateController::class)->name('update');
         Route::delete('/{product}', ProductDeleteController::class)->name('delete');
     });
+
+    Route::get('/{product}', ProductGetController::class)->name('get');
 });
 
 
@@ -69,23 +69,21 @@ Route::prefix('auth')->name('auth.')->group(function() {
         Route::post('/', LoginStoreController::class)->name('store');
     });
 
-    Route::middleware('auth')->group(function () {
-        Route::prefix('password')->name('password.')->group(function () {
-            Route::get('forgot', ShowForgotPasswordFormController::class)->name('request');
-            Route::post('forgot', SendResetPasswordLinkController::class)->name('email');
-        });
-
-        Route::post('logout', DestroyController::class)->name('logout');
+    Route::prefix('password')->name('password.')->group(function () {
+        Route::get('forgot', ShowForgotPasswordFormController::class)->name('request');
+        Route::post('forgot', SendResetPasswordLinkController::class)->name('email');
     });
+
+    Route::post('logout', DestroyController::class)->name('logout')->middleware('auth');
 });
 
 
-Route::middleware('auth')->group(function () {
-    Route::prefix('password')->name('password.')->group(function () {
-        Route::get('reset/{token}/', ShowResetPasswordFormController::class)->name('reset');
-        Route::post('reset', PasswordResetController::class)->name('update');
-    });
+Route::prefix('password')->name('password.')->group(function () {
+    Route::get('reset/{token}/', ShowResetPasswordFormController::class)->name('reset');
+    Route::post('reset', PasswordResetController::class)->name('update');
+});
 
+Route::middleware('auth')->group(function () {
     Route::prefix('baskets')->name('baskets.')->group(function () {
         Route::get('index', BasketIndexController::class)->name('index');
         Route::post('/store/{product_id}/', BasketStoreController::class)->name('store');

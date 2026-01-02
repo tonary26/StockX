@@ -1,0 +1,44 @@
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./:/var/www/:z
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d:z
+    ports:
+      - 8080:80
+    depends_on:
+      - app
+    container_name: stockx_nginx
+
+  app:
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
+    volumes:
+      - ./:/var/www/:z
+    user: '1000:1000'
+    depends_on:
+      - db
+      - redis
+    container_name: stockx_app
+
+  db:
+    image: mysql:8.0
+    restart: always
+    volumes:
+      - ./tmp/db/:/var/lib/mysql/:z
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: Stockx
+      MYSQL_USER: tonary
+      MYSQL_PASSWORD: vanea_227
+    ports:
+      - 3307:3306
+    container_name: stockx_db
+
+  redis:
+    image: redis:alpine
+    restart: always
+    ports:
+      - 6300:6379
+    container_name: stockx_redis

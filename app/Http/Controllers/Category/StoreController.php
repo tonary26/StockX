@@ -9,8 +9,6 @@ class StoreController extends BaseController
 {
     public function __invoke(Store $request)
     {
-        $this->authorize('create', Category::class);
-
         $data = $request->validated();
         $this->service->store($data);
 
