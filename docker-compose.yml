@@ -1,6 +1,6 @@
 services:
   nginx:
-    image: nginx:latest
+    image: nginx:stable-alpine
     volumes:
       - ./:/var/www/:z
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d:z
