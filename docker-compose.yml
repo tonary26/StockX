@@ -1,11 +1,12 @@
 services:
   nginx:
     image: nginx:stable-alpine
+    restart: always
     volumes:
       - ./:/var/www/:z
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d:z
     ports:
-      - 8080:80
+      - 8081:80
     depends_on:
       - app
     container_name: stockx_nginx
@@ -14,6 +15,7 @@ services:
     build:
       context: .
       dockerfile: docker/app/Dockerfile
+    restart: always
     volumes:
       - ./:/var/www/:z
     user: '1000:1000'

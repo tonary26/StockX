@@ -2,6 +2,9 @@
 ### Laravel Backend Project
 
 ---
+<p align="center">
+  <img src="stockx.png" alt="Логотип" width="200">
+</p>
 
 ## 📌 Overview
 Интернет-магазин кроссовок, разработанный на **Laravel**.  

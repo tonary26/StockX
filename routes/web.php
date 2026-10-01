@@ -47,7 +47,7 @@ Route::prefix('products')->name('product.')->group(function () {
         Route::get('/{product}/edit', ProductEditController::class)->name('edit');
         Route::patch('/{product}', ProductUpdateController::class)->name('update');
         Route::delete('/{product}', ProductDeleteController::class)->name('delete');
-    });
+    }); 
 
     Route::get('/{product}', ProductGetController::class)->name('get');
 });

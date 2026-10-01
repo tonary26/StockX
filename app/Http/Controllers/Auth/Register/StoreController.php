@@ -9,7 +9,7 @@ class StoreController extends BaseController
     public function __invoke(Store $request)
     {
         $data = $request->validated();
-
+        
         $this->service->store($data);
 
         $request->session()->regenerate();
