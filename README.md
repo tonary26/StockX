@@ -3,7 +3,7 @@
 
 ---
 <p align="center">
-  <img src="stockx.png" alt="Логотип" width="200">
+  <img src="stockx.png" alt="Логотип">
 </p>
 
 ## 📌 Overview
